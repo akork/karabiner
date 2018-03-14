@@ -1174,6 +1174,39 @@
                         ]
                     },
                     {
+                        "description": "_numrow-ru",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "input_source_if",
+                                        "input_sources": [
+                                            {
+                                                "language": "ru",
+                                                "input_source_id": "com.apple.keylayout.RussianWin",
+                                                "input_mode_id": ""
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "_numrow",
                         "manipulators": [
                             {
@@ -1260,7 +1293,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "hyphen",
+                                    "key_code": "6",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1269,7 +1302,45 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "quote",
+                                        "key_code": "6",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "7",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "8",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "8",
                                         "modifiers": [
                                             "shift"
                                         ]
@@ -1295,7 +1366,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "0",
+                                    "key_code": "hyphen",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1304,24 +1375,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "open_bracket",
+                                        "key_code": "quote",
                                         "modifiers": [
                                             "shift"
                                         ]
-                                    },
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "left_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -2015,7 +2072,7 @@
                         "product_id": 602,
                         "vendor_id": 1452
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": []
                 }
