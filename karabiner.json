@@ -165,6 +165,11 @@
                                         ]
                                     },
                                     {
+                                        "name": "meta",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    },
+                                    {
                                         "name": "nmeta",
                                         "type": "variable_unless",
                                         "value": 1
@@ -208,6 +213,11 @@
                             },
                             {
                                 "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    },
                                     {
                                         "name": "nmeta",
                                         "type": "variable_unless",
@@ -1368,7 +1378,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "meta-mod",
+                                            "name": "meta",
                                             "value": 1
                                         }
                                     }
@@ -1376,7 +1386,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "meta-mod",
+                                            "name": "meta",
                                             "value": 0
                                         }
                                     }
@@ -1394,7 +1404,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1415,7 +1425,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1437,7 +1447,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1455,7 +1465,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1473,7 +1483,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1491,7 +1501,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1521,7 +1531,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1542,7 +1552,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1563,7 +1573,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1585,7 +1595,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1607,7 +1617,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1629,7 +1639,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1650,7 +1660,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1672,7 +1682,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -1699,7 +1709,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1720,7 +1730,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1741,7 +1751,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1762,7 +1772,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1783,7 +1793,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1804,7 +1814,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1825,7 +1835,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "meta-mod",
+                                        "name": "meta",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -3540,7 +3550,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "m"
+                                        "key_code": "v"
                                     }
                                 ],
                                 "type": "basic"
@@ -3792,7 +3802,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "v"
+                                        "key_code": "m"
                                     }
                                 ],
                                 "type": "basic"
