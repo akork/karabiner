@@ -2359,6 +2359,27 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "a"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "p"
                                 },
                                 "to": [
@@ -4465,6 +4486,27 @@
                     {
                         "description": "_dvorak",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "equal_sign",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                         ]
+                                    }
+                                    },
+
+                                "to": [
+                                    {
+                                        "key_code": "backslash",
+                                        "modifiers":[
+                                            "command",
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "grave_accent_and_tilde",
