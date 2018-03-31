@@ -1530,7 +1530,6 @@
                                 ],
                                 "type": "basic"
                             },
-
                             {
                                 "conditions": [
                                     {
@@ -2296,7 +2295,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "w"
+                                    "key_code": "f"
                                 },
                                 "to": [
                                     {
@@ -2316,14 +2315,17 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "b"
+                                        "key_code": "slash",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "w"
+                                    "key_code": "f"
                                 },
                                 "to": [
                                     {
@@ -2343,7 +2345,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "slash"
+                                        "key_code": "comma"
                                     }
                                 ],
                                 "type": "basic"
@@ -2697,11 +2699,34 @@
                         ]
                     },
                     {
+                        "description": "_fast enter",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                                }
+                            ]
+                        },
+                    {
                         "description": "_smeta",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f"
+                                    "key_code": "w"
                                 },
                                 "to": [
                                     {
@@ -2721,7 +2746,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "comma"
+                                        "key_code": "return_or_enter"
                                     }
                                 ],
                                 "type": "basic"
@@ -4440,6 +4465,23 @@
                     {
                         "description": "_dvorak",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                         ]
+                                    }
+                                    },
+
+                                "to": [
+                                    {
+                                        "key_code": "slash"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "a",
