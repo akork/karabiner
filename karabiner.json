@@ -158,7 +158,7 @@
                                 },
                                 "to": [
                                     {
-                                    "key_code": "left_shift"
+                                        "key_code": "left_shift"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -2864,9 +2864,9 @@
                                     }
                                 ],
                                 "type": "basic"
-                                }
-                            ]
-                        },
+                            }
+                        ]
+                    },
                     {
                         "description": "_smeta",
                         "manipulators": [
@@ -4700,9 +4700,9 @@
                                     "modifiers": {
                                         "optional": [
                                             "any"
-                                         ]
+                                        ]
                                     }
-                                    },
+                                },
 
                                 "to": [
                                     {
@@ -4737,9 +4737,9 @@
                                     "modifiers": {
                                         "optional": [
                                             "any"
-                                         ]
+                                        ]
                                     }
-                                    },
+                                },
 
                                 "to": [
                                     {
