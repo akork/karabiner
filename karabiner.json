@@ -2874,6 +2874,24 @@
                                 "from": {
                                     "key_code": "w"
                                 },
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                    {
+                                        "key_code": "vk_none"
+                                    }
+                                    ],
+                                    "to_if_canceled": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "w"
+                                },
                                 "to": [
                                     {
                                         "set_variable": {
