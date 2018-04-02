@@ -1569,11 +1569,35 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "s"
+                                    "key_code": "w"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w",
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "v"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
                                         "modifiers": [
                                             "control"
                                         ]
@@ -1623,11 +1647,11 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f"
+                                    "key_code": "v"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w",
+                                        "key_code": "q",
                                         "modifiers": [
                                             "control"
                                         ]
@@ -1650,11 +1674,65 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "f"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "a"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w",
+                                        "key_code": "q",
                                         "modifiers": [
                                             "control"
                                         ]
@@ -1674,17 +1752,17 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "v"
+                                    "key_code": "q"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w",
+                                        "key_code": "q",
                                         "modifiers": [
                                             "control"
                                         ]
                                     },
                                     {
-                                        "key_code": "v"
+                                        "key_code": "s"
                                     }
                                 ],
                                 "type": "basic"
@@ -2355,7 +2433,12 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f"
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "optional": [
+                                        "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -2389,13 +2472,31 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "e"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "semicolon"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace",
+                                        "key_code": "left_arrow",
                                         "modifiers": [
-                                            "option"
+                                            "command"
                                         ]
                                     }
                                 ],
@@ -2721,6 +2822,27 @@
                                 ],
                                 "from": {
                                     "key_code": "h"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u"
                                 },
                                 "to": [
                                     {
@@ -4532,7 +4654,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "7",
+                                        "key_code": "open_bracket"
+                                    },
+                                    {
+                                        "key_code": "open_bracket",
                                         "modifiers": [
                                             "shift"
                                         ]
