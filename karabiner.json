@@ -11,7 +11,7 @@
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 1000,
-                    "basic.to_delayed_action_delay_milliseconds": 100,
+                    "basic.to_delayed_action_delay_milliseconds": 150,
                     "basic.to_if_alone_timeout_milliseconds": 1001,
                     "basic.to_if_held_down_threshold_milliseconds": 500
                 },
@@ -22,6 +22,43 @@
                             {
                                 "from": {
                                     "key_code": "non_us_backslash"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "hyphen"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$"
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "2"
                                 },
                                 "to": [
                                     {
@@ -757,6 +794,27 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "spacebar"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h"
+                                    },
+                                    {
+                                        "key_code": "spacebar"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "hyphen"
                                 },
                                 "to": [
@@ -770,9 +828,6 @@
                                 "type": "basic"
                             },
                             {
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_miliseconds": 50
-                                },
                                 "conditions": [
                                     {
                                         "name": "hmeta",
@@ -782,6 +837,9 @@
                                 ],
                                 "from": {
                                     "key_code": "w"
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_miliseconds": 50
                                 },
                                 "to": [
                                     {
@@ -928,7 +986,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "q"
+                                    "key_code": "z"
                                 },
                                 "to": [
                                     {
@@ -1332,7 +1390,7 @@
                                         "key_code": "h"
                                     },
                                     {
-                                        "key_code": "slash"
+                                        "key_code": "u"
                                     }
                                 ],
                                 "type": "basic"
