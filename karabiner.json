@@ -11,7 +11,7 @@
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 1000,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_delayed_action_delay_milliseconds": 100,
                     "basic.to_if_alone_timeout_milliseconds": 1001,
                     "basic.to_if_held_down_threshold_milliseconds": 500
                 },
@@ -19,11 +19,9 @@
                     {
                         "description": "_browsers",
                         "manipulators": [
-
                             {
-                                "type": "basic",
                                 "from": {
-                                            "key_code": "non_us_backslash"
+                                    "key_code": "non_us_backslash"
                                 },
                                 "to": [
                                     {
@@ -32,16 +30,15 @@
                                             "control"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
                     {
                         "description": "_vscode",
                         "manipulators": [
-
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "meta",
@@ -50,7 +47,7 @@
                                     }
                                 ],
                                 "from": {
-                                            "key_code": "w"
+                                    "key_code": "w"
                                 },
                                 "to": [
                                     {
@@ -98,16 +95,15 @@
                                             "control"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
                     {
                         "description": "_brackets",
                         "manipulators": [
-
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "hmeta",
@@ -144,10 +140,10 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "emeta",
@@ -178,10 +174,10 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "simultaneous": [
                                         {
@@ -211,11 +207,16 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "0"
@@ -226,12 +227,6 @@
                                     ],
                                     "simultaneous_options": {
                                         "key_down_order": "strict"
-                                    },
-                                    "modifiers": {
-                                        "mandatory":
-                                        [
-                                            "shift"
-                                        ]
                                     }
                                 },
                                 "to": [
@@ -250,10 +245,10 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "emeta",
@@ -262,6 +257,11 @@
                                     }
                                 ],
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "0"
@@ -272,11 +272,6 @@
                                     ],
                                     "simultaneous_options": {
                                         "key_down_order": "strict"
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
                                 },
                                 "to": [
@@ -289,10 +284,10 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "hmeta",
@@ -301,6 +296,11 @@
                                     }
                                 ],
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "0"
@@ -311,11 +311,6 @@
                                     ],
                                     "simultaneous_options": {
                                         "key_down_order": "strict"
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
                                 },
                                 "to": [
@@ -334,11 +329,16 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "0"
@@ -349,11 +349,6 @@
                                     ],
                                     "simultaneous_options": {
                                         "key_down_order": "strict"
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
                                 },
                                 "to": [
@@ -372,7 +367,8 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
                                 "conditions": [
@@ -511,15 +507,17 @@
                                 "type": "basic"
                             }
                         ]
-
                     },
                     {
                         "description": "_lshift",
                         "manipulators": [
-
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "0"
@@ -530,11 +528,6 @@
                                     ],
                                     "simultaneous_options": {
                                         "key_down_order": "strict"
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
                                 },
                                 "to": [
@@ -553,7 +546,8 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
                                 "conditions": [
@@ -612,20 +606,19 @@
                         ]
                     },
                     {
-
                         "description": "_hmeta",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     },
                                     {
                                         "name": "meta",
@@ -726,14 +719,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     },
                                     {
                                         "name": "hmeta",
@@ -777,6 +770,9 @@
                                 "type": "basic"
                             },
                             {
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_miliseconds": 50
+                                },
                                 "conditions": [
                                     {
                                         "name": "hmeta",
@@ -798,14 +794,31 @@
                                         ]
                                     },
                                     {
-                                        "select_input_source":
-                                        {
-                                            "language": "en",
+                                        "select_input_source": {
+                                            "input_mode_id": "",
                                             "input_source_id": "com.apple.keylayout.US",
-                                            "input_mode_id": ""
+                                            "language": "en"
                                         }
                                     }
                                 ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "key_code": "d"
+                                        },
+                                        {
+                                            "key_code": "spacebar"
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "key_code": "d"
+                                        },
+                                        {
+                                            "key_code": "spacebar"
+                                        }
+                                    ]
+                                },
                                 "type": "basic"
                             },
                             {
@@ -830,11 +843,10 @@
                                         ]
                                     },
                                     {
-                                        "select_input_source":
-                                        {
-                                            "language": "en",
+                                        "select_input_source": {
+                                            "input_mode_id": "",
                                             "input_source_id": "com.apple.keylayout.US",
-                                            "input_mode_id": ""
+                                            "language": "en"
                                         }
                                     }
                                 ],
@@ -920,11 +932,10 @@
                                 },
                                 "to": [
                                     {
-                                        "select_input_source":
-                                        {
-                                            "language": "en",
+                                        "select_input_source": {
+                                            "input_mode_id": "",
                                             "input_source_id": "com.apple.keylayout.US",
-                                            "input_mode_id": ""
+                                            "language": "en"
                                         }
                                     }
                                 ],
@@ -2003,10 +2014,10 @@
                                 },
                                 "to": [
                                     {
-                                        "pointing_button": "button1",
                                         "modifiers": [
                                             "command"
-                                        ]
+                                        ],
+                                        "pointing_button": "button1"
                                     }
                                 ],
                                 "type": "basic"
@@ -2948,14 +2959,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -3855,19 +3866,19 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "org.gnu.Emacs"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "right_command",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
-                                    },
-                                    "key_code": "right_command"
+                                    }
                                 },
                                 "to": [
                                     {
@@ -3888,12 +3899,12 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "right_command",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
-                                    },
-                                    "key_code": "right_command"
+                                    }
                                 },
                                 "to": [
                                     {
@@ -3920,12 +3931,12 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "key_code": "right_shift",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
-                                    },
-                                    "key_code": "right_shift"
+                                    }
                                 },
                                 "to": [
                                     {
@@ -3947,14 +3958,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -3978,14 +3989,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4015,14 +4026,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4043,14 +4054,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4071,14 +4082,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4099,14 +4110,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4127,14 +4138,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4155,14 +4166,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4183,14 +4194,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4214,14 +4225,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4242,14 +4253,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4270,14 +4281,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4298,14 +4309,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4326,14 +4337,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4354,14 +4365,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4382,14 +4393,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4410,14 +4421,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4438,14 +4449,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4466,14 +4477,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4494,14 +4505,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4522,14 +4533,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4550,14 +4561,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4578,14 +4589,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4606,14 +4617,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4634,14 +4645,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4662,14 +4673,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4690,14 +4701,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4718,14 +4729,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4746,14 +4757,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4774,14 +4785,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4802,14 +4813,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4830,14 +4841,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4858,14 +4869,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4886,14 +4897,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4914,14 +4925,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4942,14 +4953,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -4970,14 +4981,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
-                                                "language": "ru",
+                                                "input_mode_id": "",
                                                 "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "input_mode_id": ""
+                                                "language": "ru"
                                             }
-                                        ]
+                                        ],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -5234,11 +5245,10 @@
                                         ]
                                     }
                                 },
-
                                 "to": [
                                     {
                                         "key_code": "backslash",
-                                        "modifiers":[
+                                        "modifiers": [
                                             "command",
                                             "option"
                                         ]
@@ -5271,7 +5281,6 @@
                                         ]
                                     }
                                 },
-
                                 "to": [
                                     {
                                         "key_code": "slash"
@@ -5959,6 +5968,7 @@
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
+                "country_code": 0,
                 "keyboard_type": "ansi"
             }
         }
