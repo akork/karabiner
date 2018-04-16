@@ -2378,7 +2378,7 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "s"
+                                        "key_code": "v"
                                     }
                                 ],
                                 "type": "basic"
@@ -4515,7 +4515,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "t"
+                                        "key_code": "c"
                                     },
                                     {
                                         "key_code": "k"
