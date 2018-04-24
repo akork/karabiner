@@ -25,9 +25,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w",
+                                        "key_code": "tab",
                                         "modifiers": [
-                                            "command"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -2809,11 +2810,6 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "tab"
-                                    }
-                                ],
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
@@ -3115,6 +3111,27 @@
                                     },
                                     {
                                         "key_code": "u"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q"
+                                    },
+                                    {
+                                        "key_code": "a"
                                     }
                                 ],
                                 "type": "basic"
@@ -3595,7 +3612,7 @@
                                         ]
                                     }
                                 ],
-                            "type": "basic"
+                                "type": "basic"
                             },
                             {
                                 "conditions": [
