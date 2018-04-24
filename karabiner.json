@@ -638,11 +638,10 @@
                                         ]
                                     },
                                     {
-                                        "select_input_source":
-                                        {
-                                            "language": "en",
+                                        "select_input_source": {
+                                            "input_mode_id": "",
                                             "input_source_id": "com.apple.keylayout.US",
-                                            "input_mode_id": ""
+                                            "language": "en"
                                         }
                                     }
                                 ],
@@ -3261,11 +3260,11 @@
                                 ],
                                 "from": {
                                     "key_code": "m",
-                                "modifiers": {
-                                    "mandatory": [
-                                        "shift"
-                                    ]
-                                }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -4146,11 +4145,10 @@
                                         "key_code": "return_or_enter"
                                     },
                                     {
-                                        "select_input_source":
-                                        {
-                                            "language": "en",
+                                        "select_input_source": {
+                                            "input_mode_id": "",
                                             "input_source_id": "com.apple.keylayout.US",
-                                            "input_mode_id": ""
+                                            "language": "en"
                                         }
                                     }
                                 ],
@@ -5613,6 +5611,38 @@
                     {
                         "description": "_dvorak",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "meta",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar"
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "meta",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "1",
