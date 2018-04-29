@@ -2096,6 +2096,71 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "a"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "grave_accent_and_tilde"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "s",
+                                        "modifiers": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "tab"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f5",
+                                        "modifiers": [
+                                            "fn",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "delete_or_backspace"
                                 },
                                 "to": [
@@ -2206,13 +2271,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "l",
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": [
                                             "control"
                                         ]
@@ -2260,15 +2319,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "q",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    },
-                                    {
                                         "key_code": "r",
                                         "modifiers": [
-                                            "control"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -2320,13 +2374,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "q",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "t",
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": [
                                             "control"
                                         ]
@@ -4167,10 +4215,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "key_code": "spacebar"
                                     }
                                 ],
                                 "type": "basic"
@@ -6380,7 +6425,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow"
+                                        "key_code": "hyphen",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
