@@ -5014,6 +5014,30 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "f"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "b",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "o"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "s"
                                 },
                                 "to": [
@@ -5133,6 +5157,14 @@
                                 "to": [
                                     {
                                         "key_code": "left_option"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -5873,7 +5905,11 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'activate application \"iTerm\"'"
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "command",
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -7104,6 +7140,27 @@
                     {
                         "description": "_nmeta",
                         "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "nmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "slash"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "conditions": [
                                     {
@@ -9476,38 +9533,6 @@
                                 "to": [
                                     {
                                         "key_code": "open_bracket"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "non_us_backslash"
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "emeta",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "p",
-                                        "modifiers": [
-                                            "command"
-                                        ],
-                                        "repeat": false
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "key_code": "return_or_enter"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "emeta",
-                                            "value": 0
-                                        }
                                     }
                                 ],
                                 "type": "basic"
