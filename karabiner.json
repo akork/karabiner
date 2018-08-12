@@ -8797,10 +8797,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "slash",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
+                                        "key_code": "w"
                                     }
                                 ],
                                 "type": "basic"
@@ -8838,34 +8835,6 @@
                                     },
                                     {
                                         "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "input_sources": [
-                                            {
-                                                "input_mode_id": "",
-                                                "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "language": "ru"
-                                            }
-                                        ],
-                                        "type": "input_source_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "slash"
                                     }
                                 ],
                                 "type": "basic"
@@ -9404,7 +9373,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g"
+                                        "key_code": "slash"
                                     }
                                 ],
                                 "type": "basic"
@@ -9675,34 +9644,6 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "input_sources": [
-                                            {
-                                                "input_mode_id": "",
-                                                "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "language": "ru"
-                                            }
-                                        ],
-                                        "type": "input_source_if"
-                                    }
-                                ],
-                                "from": {
                                     "key_code": "8",
                                     "modifiers": {
                                         "optional": [
@@ -9796,7 +9737,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w"
+                                        "key_code": "g"
                                     }
                                 ],
                                 "type": "basic"
@@ -9919,28 +9860,6 @@
                         "description": "_dvorak",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "meta",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "nmeta",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "smeta",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "emeta",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "open_bracket"
                                 },
@@ -9959,28 +9878,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "g",
-                                        "modifiers": [
-                                            "command",
-                                            "option",
-                                            "shift"
-                                        ]
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
