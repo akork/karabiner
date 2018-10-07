@@ -2580,11 +2580,11 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "n"
+                                    "key_code": "l"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "p",
+                                        "key_code": "n",
                                         "modifiers": [
                                             "option"
                                         ]
