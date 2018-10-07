@@ -2538,6 +2538,30 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "u"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    },
+				    {
+                                        "key_code": "g"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "4meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "k"
                                 },
                                 "to": [
@@ -4337,16 +4361,19 @@
                                         ]
                                     },
 				    {
-                                        "key_code": "c",
+                                        "key_code": "s",
                                         "modifiers": [
                                             "control"
                                         ]
                                     },
 				    {
-                                        "key_code": "1",
+                                        "key_code": "x",
                                         "modifiers": [
-                                            "shift"
+                                            "control"
                                         ]
+                                    },
+				    {
+                                        "key_code": "e"
                                     }
                                 ],
                                 "type": "basic"
