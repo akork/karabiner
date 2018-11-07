@@ -4157,10 +4157,28 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g",
+                                        "key_code": "x",
 					"modifiers": [
 					    "control"
 					]
+                                    },
+                                    {
+                                        "key_code": "s",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -4184,7 +4202,7 @@
                                         ]
                                     },
 				    {
-                                        "key_code": "c",
+                                        "key_code": "s",
                                         "modifiers": [
                                             "control"
                                         ]
@@ -4266,6 +4284,7 @@
                                     },
 				    {
                                         "key_code": "s",
+
                                         "modifiers": [
                                             "control"
                                         ]
@@ -4320,34 +4339,6 @@
                                     },
                                     {
                                         "key_code": "spacebar"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hmeta",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "w"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    },
-                                    {
-                                        "select_input_source": {
-                                            "input_mode_id": "",
-                                            "input_source_id": "com.apple.keylayout.US",
-                                            "language": "en"
-                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -5068,7 +5059,7 @@
                                         "key_code": "h"
                                     },
                                     {
-                                        "key_code": "u"
+                                        "key_code": "return_or_enter"
                                     }
                                 ],
                                 "type": "basic"
@@ -7908,7 +7899,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "6",
+                                        "key_code": "3",
                                         "modifiers": [
                                             "shift"
                                         ]
