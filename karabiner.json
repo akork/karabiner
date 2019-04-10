@@ -105,71 +105,6 @@
                             }
                         ]
                     },
-					{
-						"description": "_rshift",
-						"manipulators": [
-							{
-								"from": {
-									"key_code": "open_bracket"
-								},
-								"to": [
-									{
-										"key_code": "right_shift"
-									},
-									{
-										"set_variable": {
-											"name": "rshiftmeta",
-											"value": 1
-										}
-									}
-								],
-								"to_after_key_up": [
-									{
-										"set_variable": {
-											"name": "cmeta",
-											"value": 0
-										}
-									},
-									{
-										"set_variable": {
-											"name": "rshiftmeta",
-											"value": 0
-										}
-									}
-								],
-								"to_if_alone": [
-									{
-										"key_code": "open_bracket"
-									}
-								],
-								"type": "basic"
-							},
-							{
-								"from": {
-									"key_code": "tab"
-								},
-								"conditions": [
-									{
-										"name": "rshiftmeta",
-										"type": "variable_if",
-										"value": 1
-									}
-								],
-								"to": [
-									{
-										"key_code": "open_bracket"
-									},
-									{
-										"key_code": "close_bracket"
-									},
-									{
-										"key_code": "left_arrow"
-									}
-								],
-								"type": "basic"
-							}
-						]
-					},
                     {
                         "description": "_lshift",
                         "manipulators": [
@@ -1732,7 +1667,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o"
+                                    "key_code": "0"
                                 },
                                 "to": [
                                     {
@@ -1760,7 +1695,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "i"
+                                    "key_code": "9"
                                 },
                                 "to": [
                                     {
@@ -6269,6 +6204,27 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "7"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+							{
+                                "conditions": [
+                                    {
+                                        "name": "meta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "hyphen"
                                 },
                                 "to": [
@@ -7589,7 +7545,8 @@
                                     {
                                         "key_code": "u",
                                         "modifiers": [
-                                            "option"
+                                            "control",
+											"shift"
                                         ]
                                     }
                                 ],
@@ -9834,6 +9791,71 @@
                             }
                         ]
                     },
+					{
+						"description": "_rshift",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "open_bracket"
+								},
+								"to": [
+									{
+										"set_variable": {
+											"name": "rshiftmeta",
+											"value": 1
+										}
+									},
+									{
+										"key_code": "right_shift"
+									}
+								],
+								"to_after_key_up": [
+									{
+										"set_variable": {
+											"name": "cmeta",
+											"value": 0
+										}
+									},
+									{
+										"set_variable": {
+											"name": "rshiftmeta",
+											"value": 0
+										}
+									}
+								],
+								"to_if_alone": [
+									{
+										"key_code": "open_bracket"
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "tab"
+								},
+								"conditions": [
+									{
+										"name": "rshiftmeta",
+										"type": "variable_if",
+										"value": 1
+									}
+								],
+								"to": [
+									{
+										"key_code": "open_bracket"
+									},
+									{
+										"key_code": "close_bracket"
+									},
+									{
+										"key_code": "left_arrow"
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
                     {
                         "description": "_right_command",
                         "manipulators": [
