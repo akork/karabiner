@@ -30,38 +30,6 @@
                                             }
                                         ],
                                         "type": "input_source_if"
-                                    },
-                                    {
-                                        "name": "right_shift pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "q"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "input_sources": [
-                                            {
-                                                "input_mode_id": "",
-                                                "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "language": "ru"
-                                            }
-                                        ],
-                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -2416,6 +2384,28 @@
                         "description": "_4meta_trig",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "4",
                                     "modifiers": {
@@ -2812,9 +2802,9 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "d",
+                                        "key_code": "c",
                                         "modifiers": [
-                                            "option"
+                                            "control"
                                         ]
                                     }
                                 ],
@@ -4778,7 +4768,7 @@
                                     "key_code": "z"
                                 },
                                 "to": [
-                                    {
+									{
                                         "key_code": "r"
                                     },
                                     {
@@ -4800,24 +4790,20 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "3"
+                                "from": { 
+                                    "key_code": "6"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "return_or_enter",
+                                        "key_code": "r",
                                         "modifiers": [
-                                            "control",
-                                            "shift"
+                                            "control"
                                         ]
-                                    },
-                                    {
-                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
                             },
-                            {
+							{
                                 "conditions": [
                                     {
                                         "name": "hmeta",
@@ -5215,28 +5201,6 @@
                                     },
                                     {
                                         "key_code": "return_or_enter"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hmeta",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "8"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "option",
-                                            "command"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -6293,6 +6257,59 @@
                             }
                         ]
                     },
+                    {
+                        "description": "_meta_trig",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "rshiftmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "spacebar"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma"
+                                    },
+                                    {
+                                        "key_code": "spacebar"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "spacebar"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "meta",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "meta",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+						]
+					},
                     {
                         "description": "_meta",
                         "manipulators": [
@@ -8280,9 +8297,9 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "g",
-                                        "modifiers": [
-                                            "control"
-                                        ]
+										"modifiers": [
+											"control"
+										]
                                     }
                                 ],
                                 "type": "basic"
@@ -8440,10 +8457,7 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "c",
-                                        "modifiers": [
-                                            "control"
-                                        ]
+                                        "key_code": "semicolon"
                                     }
                                 ],
                                 "type": "basic"
@@ -8525,10 +8539,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "1",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
+                                        "key_code": "semicolon"
                                     }
                                 ],
                                 "type": "basic"
@@ -9863,9 +9874,11 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "return_or_enter",
+                                        "key_code": "return_or_enter"
+									},
+									{
 										"select_input_source": {
-											"language": "ru",
+											"language": "en",
 											"input_source_id": "com.apple.keylayout.US"
 										}
                                     }
@@ -9943,7 +9956,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "open_bracket"
+                                        "key_code": "comma"
                                     }
                                 ],
                                 "type": "basic"
@@ -11251,38 +11264,6 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "meta",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "meta",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "spacebar"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
                                     "key_code": "hyphen",
                                     "modifiers": {
                                         "optional": [
@@ -11308,7 +11289,11 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "semicolon"
+                                        "key_code": "y",
+										"modifiers": [
+											"control",
+											"option"
+										]
                                     }
                                 ],
                                 "type": "basic"
