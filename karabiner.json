@@ -4791,6 +4791,81 @@
                                     }
                                 ],
                                 "from": { 
+                                    "key_code": "1"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+										"modifiers": [
+											"shift"
+										]
+                                    },
+									{
+										"key_code": "close_bracket",
+										"modifiers": [
+											"shift"
+										]
+									},
+									{
+										"key_code": "left_arrow"
+									},
+									{
+										"key_code": "return_or_enter"
+									},
+									{
+										"key_code": "up_arrow"
+									},
+									{
+										"key_code": "right_arrow",
+										"modifiers": [
+											"command"
+										]
+									},
+									{
+										"key_code": "return_or_enter"
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { 
+                                    "key_code": "2"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+										"modifiers": [
+											"shift"
+										]
+                                    },
+									{
+										"key_code": "close_bracket",
+										"modifiers": [
+											"shift"
+										]
+									},
+									{
+										"key_code": "left_arrow"
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { 
                                     "key_code": "6"
                                 },
                                 "to": [
@@ -5377,16 +5452,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "open_bracket",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
+                                        "key_code": "open_bracket"
                                     },
                                     {
-                                        "key_code": "close_bracket",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
+                                        "key_code": "close_bracket"
                                     },
                                     {
                                         "key_code": "left_arrow"
@@ -8310,6 +8379,27 @@
                         "description": "_smeta_trig",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "rshiftmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma"
+                                    },
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -9923,7 +10013,7 @@
                         ]
                     },
                     {
-                        "description": "_rshift",
+                        "description": "_rshift_trig",
                         "manipulators": [
                             {
                                 "from": {
@@ -9935,9 +10025,6 @@
                                             "name": "rshiftmeta",
                                             "value": 1
                                         }
-                                    },
-                                    {
-                                        "key_code": "right_shift"
                                     }
                                 ],
                                 "to_after_key_up": [
@@ -9982,6 +10069,53 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "_rshift",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "rshiftmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "i",
+										"modifiers": [
+											"shift"
+										]
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "rshiftmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "3"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma"
+									},
+									{
+										"key_code": "escape"
+									}
                                 ],
                                 "type": "basic"
                             }
@@ -11273,7 +11407,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "open_bracket"
+                                        "key_code": "right_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -11398,7 +11532,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "comma"
+                                        "key_code": "open_bracket"
                                     }
                                 ],
                                 "type": "basic"
