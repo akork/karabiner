@@ -4836,7 +4836,7 @@
                                     }
                                 ],
                                 "from": { 
-                                    "key_code": "2"
+                                    "key_code": "0"
                                 },
                                 "to": [
                                     {
@@ -5259,7 +5259,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "0"
+                                    "key_code": "2"
                                 },
                                 "to": [
                                     {
@@ -5273,9 +5273,6 @@
 										"modifiers": [
 											"command"
 										]
-                                    },
-                                    {
-                                        "key_code": "return_or_enter"
                                     }
                                 ],
                                 "type": "basic"
@@ -10086,6 +10083,27 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "8"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma"
+									},
+                                    {
+                                        "key_code": "hyphen"
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "rshiftmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "a"
                                 },
                                 "to": [
@@ -11405,25 +11423,25 @@
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "y",
+								"to": [
+									{
+										"key_code": "right_arrow"
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "1",
+									"modifiers": {
+										"optional": [
+											"any"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "y",
 										"modifiers": [
 											"control",
 											"option"
