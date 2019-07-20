@@ -1,4 +1,5 @@
 {
+
     "description": "___start",
     "global": {
         "check_for_updates_on_startup": true,
@@ -4139,7 +4140,13 @@
                                     },
 									{
 										"key_code": "left_arrow"
-									}
+									},
+                                    {
+                                        "set_variable": {
+                                            "name": "hmeta",
+                                            "value": 0
+                                        }
+                                    }
                                 ],
                                 "type": "basic"
                             },
@@ -4936,7 +4943,13 @@
                                     },
                                     {
                                         "key_code": "left_arrow"
-                                    }
+                                    },
+									{
+										"set_variable": {
+											"name": "hmeta",
+											"value": 0
+										}
+									}
                                 ],
                                 "type": "basic"
                             },
@@ -7690,10 +7703,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "close_bracket",
+                                        "key_code": "open_bracket",
                                         "modifiers": [
-                                            "shift",
-                                            "option"
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -7776,14 +7788,11 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x",
+                                        "key_code": "close_bracket",
                                         "modifiers": [
-                                            "control"
+                                            "shift"
                                         ]
-                                    },
-                                    {
-                                        "key_code": "b"
-                                    }
+									}
                                 ],
                                 "type": "basic"
                             },
@@ -7823,8 +7832,7 @@
                                     {
                                         "key_code": "u",
                                         "modifiers": [
-                                            "control",
-                                            "shift"
+                                            "option"
                                         ]
                                     }
                                 ],
@@ -7839,14 +7847,23 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "3"
+                                    "key_code": "a"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "a",
+                                        "key_code": "left_arrow",
                                         "modifiers": [
-                                            "control"
+                                            "command"
                                         ]
+                                    },
+									{
+                                        "key_code": "return_or_enter"
+                                    },
+									{
+                                        "key_code": "up_arrow"
+                                    },
+									{
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
@@ -7957,14 +7974,11 @@
                                 },
                                 "to": [
                                     {
-                                        "select_input_source": {
-                                            "input_mode_id": "",
-                                            "input_source_id": "com.apple.keylayout.US",
-                                            "language": "en"
-                                        }
-                                    },
-                                    {
-                                        "key_code": "escape"
+                                        "key_code": "z",
+										
+										"modifiers": [
+											"command"
+										]
                                     }
                                 ],
                                 "type": "basic"
@@ -8287,9 +8301,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "a",
+                                        "key_code": "left_arrow",
                                         "modifiers": [
-                                            "control"
+                                            "command"
                                         ]
                                     }
                                 ],
@@ -8350,10 +8364,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "hyphen",
+                                        "key_code": "delete_or_backspace",
                                         "modifiers": [
-                                            "control",
-                                            "shift"
+                                            "command"
                                         ]
                                     }
                                 ],
@@ -8372,15 +8385,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "0",
+                                        "key_code": "d",
                                         "modifiers": [
                                             "option"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "k",
-                                        "modifiers": [
-                                            "control"
                                         ]
                                     }
                                 ],
@@ -10503,36 +10510,6 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "2",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "slash",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "input_sources": [
-                                            {
-                                                "input_source_id": "com.apple.keylayout.RussianWin",
-                                                "language": "ru"
-                                            }
-                                        ],
-                                        "type": "input_source_if"
-                                    }
-                                ],
-                                "from": {
                                     "key_code": "return_or_enter",
                                     "modifiers": {
                                         "optional": [
@@ -11508,6 +11485,34 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+										"modifiers": [
+											"command"
+										]
+                                    },
+									{
+										"key_code": "return_or_enter"
+									},
+									{
+										"key_code": "tab"
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "0",
                                     "modifiers": {
                                         "optional": [
@@ -11669,7 +11674,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "2",
+                                    "key_code": "3",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -11678,10 +11683,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "hyphen",
-										"modifiers": [
-											"shift"
-										]
+                                        "key_code": "delete_or_backspace"
                                     }
                                 ],
                                 "type": "basic"
@@ -11704,7 +11706,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "2",
                                     "modifiers": {
                                         "optional": [
                                             "any"
