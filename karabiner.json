@@ -5592,6 +5592,15 @@
                                         "modifiers": [
                                             "shift"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -7493,9 +7502,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": [
-                                            "option"
+                                            "shift",
+											"command"
                                         ]
                                     }
                                 ],
@@ -7688,6 +7698,48 @@
                     {
                         "description": "_emeta",
                         "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "7"
+                                },
+                                "to": [
+									{
+										"key_code": "open_bracket",
+										"modifiers": [
+											"shift"
+										]
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "hyphen"
+                                },
+                                "to": [
+									{
+										"key_code": "close_bracket",
+										"modifiers": [
+											"shift"
+										]
+									}
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "conditions": [
                                     {
@@ -8664,7 +8716,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "0"
+                                    "key_code": "0",
+									"modifiers": {
+										"optional": [
+											"any"
+										]
+									}
                                 },
                                 "to": [
                                     {
@@ -11514,6 +11571,33 @@
                                 "to": [
                                     {
                                         "key_code": "x"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "com.apple.keylayout.RussianWin",
+                                                "language": "ru"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a"
                                     }
                                 ],
                                 "type": "basic"
