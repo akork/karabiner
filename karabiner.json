@@ -8797,7 +8797,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "semicolon"
+                      "key_code": "semicolon",
+					  "modifiers": [
+						  "shift"
+					  ]
                   }
                 ],
                 "type": "basic"
@@ -8961,10 +8964,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "semicolon",
-                    "modifiers": [
-                      "shift"
-                    ]
+                    "key_code": "semicolon"
                   }
                 ],
                 "type": "basic"
@@ -9028,9 +9028,9 @@
                 "from": {
                   "key_code": "i"
                 },
-                "to": [
+                  "to": [
                   {
-                    "key_code": "equal_sign"
+                    "key_code": "hyphen"
                   }
                 ],
                 "type": "basic"
@@ -9117,9 +9117,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "s",
+                    "key_code": "8",
                     "modifiers": [
-                      "control"
+                      "shift"
                     ]
                   }
                 ],
@@ -11674,7 +11674,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "hyphen"
+                      "key_code": "equal_sign"
                   }
                 ],
                 "type": "basic"
