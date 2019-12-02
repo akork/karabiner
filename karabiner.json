@@ -2238,19 +2238,41 @@
                   }
                 ],
                 "from": {
-                  "key_code": "t"
+                  "key_code": "equal_sign"
                 },
                 "to": [
                   {
-                    "key_code": "f6",
+                    "key_code": "hyphen",
                     "modifiers": [
-                      "fn",
+                      "control",
                       "shift"
                     ]
                   }
                 ],
                 "type": "basic"
               },
+				{
+					"conditions": [
+						{
+							"name": "4meta",
+							"type": "variable_if",
+							"value": 1
+						}
+					],
+					"from": {
+						"key_code": "t"
+					},
+					"to": [
+						{
+							"key_code": "f6",
+							"modifiers": [
+								"fn",
+								"shift"
+							]
+						}
+					],
+					"type": "basic"
+				},
               {
                 "conditions": [
                   {
@@ -7491,7 +7513,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "y",
+                    "key_code": "x",
                     "modifiers": [
                       "command"
                     ]
@@ -8402,7 +8424,12 @@
                   }
                 ],
                 "from": {
-                  "key_code": "w"
+					"key_code": "w",
+					"modifiers": {
+						"optional": [
+							"any"
+						]
+					}
                 },
                 "to": [
                   {
@@ -8441,7 +8468,7 @@
                 ],
                 "to_if_alone": [
                   {
-                    "key_code": "return_or_enter"
+				"key_code": "return_or_enter"
                   },
                   {
                     "select_input_source": {
@@ -9026,7 +9053,12 @@
                   }
                 ],
                 "from": {
-                  "key_code": "i"
+					"key_code": "i",
+					"modifiers": {
+						"optional": [
+							"any"
+						]
+					}
                 },
                   "to": [
                   {
@@ -10816,7 +10848,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "k"
+                    "key_code": "g"
                   }
                 ],
                 "type": "basic"
@@ -11005,7 +11037,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "g"
+                    "key_code": "k"
                   }
                 ],
                 "type": "basic"
@@ -11604,24 +11636,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "x",
+                    "key_code": "f2",
                     "modifiers": [
-                      "control"
-                    ]
-                  },
-                  {
-                    "key_code": "j",
-                    "modifiers": [
-                      "control"
-                    ]
-                  },
-                  {
-                    "key_code": "k"
-                  },
-                  {
-                    "key_code": "open_bracket",
-                    "modifiers": [
-                      "control"
+                      "fn"
                     ]
                   }
                 ],
@@ -11835,30 +11852,11 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "cmeta",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "cmeta",
-                      "value": 0
-                    }
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "g",
-                    "modifiers": [
-                      "control"
-                    ]
-                  }
-                ],
+                  "to": [
+					  {
+						  "key_code": "q"
+					  }
+				  ],
                 "type": "basic"
               },
               {
@@ -11968,7 +11966,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "l"
+                    "key_code": "p"
                   }
                 ],
                 "type": "basic"
@@ -12080,7 +12078,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "p"
+                    "key_code": "l"
                   }
                 ],
                 "type": "basic"
@@ -12176,7 +12174,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "u"
+                    "key_code": "k"
                   }
                 ],
                 "type": "basic"
@@ -12208,7 +12206,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "k"
+                    "key_code": "u"
                   }
                 ],
                 "type": "basic"
