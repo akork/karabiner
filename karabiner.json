@@ -17,70 +17,158 @@
           "mouse_motion_to_scroll.speed": 100
         },
         "rules": [
-          {
-            "description": "_yi",
+
+		  {
+            "description": "_bmeta_os",
             "manipulators": [
               {
-                "conditions": [
-                  {
-                    "input_sources": [
-                      {
-                        "input_mode_id": "",
-                        "input_source_id": "com.apple.keylayout.RussianWin",
-                        "language": "ru"
-                      }
-                    ],
-                    "type": "input_source_if"
-                  }
-                ],
                 "from": {
-                  "key_code": "b",
+                  "key_code": "0",
                   "modifiers": {
                     "optional": [
                       "any"
                     ]
                   }
                 },
+				  "conditions": [
+					  {
+						  "type": "variable_if",
+						  "name": "bmeta trace",
+						  "value": 1
+					  }  
+				  ],
                 "to": [
                   {
-                    "set_variable": {
-                      "name": "right_shift pressed",
-                      "value": 1
-                    }
+                      "key_code": "comma"
                   },
+					{
+                      "set_variable": {
+                        "name": "bmeta trace",
+                        "value": 0
+                      }
+                    }
+                ],
+                "type": "basic"
+              },
+				{
+					"from": {
+						"key_code": "right_command",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "bmeta trace",
+							"value": 1
+						}  
+					],
+					"to": [
+						{
+							"key_code": "return_or_enter",
+							"modifiers": [
+								"command"
+							]
+						},
+						{
+							"set_variable": {
+								"name": "bmeta trace",
+								"value": 0
+							}
+						}
+					],
+					"type": "basic"
+				},
+			{
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+				  "conditions": [
+					  {
+						  "type": "variable_if",
+						  "name": "bmeta pressed",
+						  "value": 1
+					  }  
+				  ],
+                "to": [
                   {
-                    "key_code": "s"
+                      "key_code": "return_or_enter",
+					  "modifiers": [
+						  "command"
+					  ]
                   }
                 ],
-                "to_delayed_action": {
-                  "to_if_canceled": [
-                    {
-                      "set_variable": {
-                        "name": "right_shift pressed",
-                        "value": 0
-                      }
-                    }
-                  ],
-                  "to_if_invoked": [
-                    {
-                      "set_variable": {
-                        "name": "right_shift pressed",
-                        "value": 0
-                      }
-                    }
-                  ]
-                },
                 "type": "basic"
               }
             ]
           },
+			{
+				"description": "_bmeta_os_trig",
+				"manipulators": [
+					{
+						"from": {
+							"key_code": "0",
+							"modifiers": {
+								"optional": [
+									"any"
+								]
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "bmeta pressed",
+									"value": 1
+								}
+							},
+							{
+								"set_variable": {
+									"name": "bmeta trace",
+									"value": 1
+								}
+							}
+						],
+						"to_after_key_up": [
+							{
+								"set_variable": {
+									"name": "bmeta pressed",
+									"value": 0
+								}
+							}
+						],
+						"to_delayed_action": {
+							"to_if_canceled": [
+								
+							],
+							"to_if_invoked": [
+								{
+									"set_variable": {
+										"name": "bmeta trace",
+										"value": 0
+									}
+								}
+							]
+						},
+						"type": "basic"
+					}
+				]
+			},
+			
           {
             "description": "_lshift",
             "manipulators": [
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "EMETA",
                     "type": "variable_unless",
                     "value": 1
                   },
@@ -7401,88 +7489,1203 @@
               }
             ]
           },
+			{
+				"description": "_emeta_trig",
+				"manipulators": [
+					{
+						"from": {
+							"key_code": "f",
+							"modifiers": {
+								"optional": [
+									"any"
+								]
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta",
+									"value": 1
+								}
+							},
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 1
+								}
+							}
+						],
+						"to_after_key_up": [
+							{
+								"set_variable": {
+									"name": "emeta",
+									"value": 0
+								}
+							}
+						],
+						"to_delayed_action": {
+							"to_if_canceled": [
+								
+							],
+							"to_if_invoked": [
+								{
+									"set_variable": {
+										"name": "emeta trace",
+										"value": 0
+									}
+								}
+							]
+						},
+						"type": "basic"
+					}
+				]
+			},
+			{
+				"description": "_emeta",
+				"manipulators": [
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "grave_accent_and_tilde"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "y",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "z"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "x",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "7"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "open_bracket",
+								"modifiers": [
+									"shift"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "hyphen"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "close_bracket",
+								"modifiers": [
+									"shift"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "right_shift"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "c",
+								"modifiers": [
+									"control"
+								]
+							},
+							{
+								"key_code": "y",
+								"modifiers": [
+									"control"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "close_bracket"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "x",
+								"modifiers": [
+									"control"
+								]
+							},
+							{
+								"key_code": "semicolon",
+								"modifiers": [
+									"control"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "9"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "open_bracket",
+								"modifiers": [
+									"shift"
+								]
+							},
+							{
+								"key_code": "close_bracket",
+								"modifiers": [
+									"shift"
+								]
+							},
+							{
+								"key_code": "left_arrow"
+							},
+							{
+								"set_variable": {
+									"name": "emeta",
+									"value": 0
+								}
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "comma"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "w",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "period"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "y",
+								"modifiers": [
+									"control",
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "8"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "delete_or_backspace",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "open_bracket"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "close_bracket",
+								"modifiers": [
+									"shift"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "2"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "x",
+								"modifiers": [
+									"control"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "d"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "u",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "a"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "left_arrow",
+								"modifiers": [
+									"command"
+								]
+							},
+							{
+								"key_code": "return_or_enter"
+							},
+							{
+								"key_code": "up_arrow"
+							},
+							{
+								"key_code": "tab"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "s"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "spacebar",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "y"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "x",
+								"modifiers": [
+									"control"
+								]
+							},
+							{
+								"key_code": "b",
+								"modifiers": [
+									"control"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "a"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "d",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "slash"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "m",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "e",
+							"modifiers": {
+								"optional": "any"
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "z",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "semicolon",
+							"modifiers": {
+								"optional": "any"
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "right_arrow",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "q"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "k",
+								"modifiers": [
+									"control"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "a"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "q"
+							},
+							{
+								"key_code": "a"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "p",
+							"modifiers": {
+								"optional": "any"
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "page_up"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "u"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "page_down"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "tab"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "return_or_enter",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "f"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "delete_or_backspace",
+								"modifiers": [
+									"command"
+								]
+							},
+							{
+								"key_code": "delete_or_backspace",
+								"modifiers": [
+									"command"
+								]
+							},
+							{
+								"key_code": "delete_or_backspace"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "m",
+							"modifiers": {
+								"optional": "any"
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "left_arrow"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "k",
+							"modifiers": {
+								"optional": "any"
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "right_arrow"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "l"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "right_arrow",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "n"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "left_arrow",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "i",
+							"modifiers": {
+								"optional": "any"
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "down_arrow"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "o",
+							"modifiers": {
+								"optional": "any"
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "up_arrow"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "j",
+							"modifiers": {
+								"optional": [
+									"any"
+								]
+							}
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "delete_or_backspace"
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "h"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "left_arrow",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "u"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "delete_or_backspace",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "u"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "delete_or_backspace",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "r"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "delete_or_backspace",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "quote"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "d",
+								"modifiers": [
+									"option"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "p"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "left_arrow",
+								"modifiers": [
+									"command"
+								]
+							}
+						],
+						"type": "basic"
+					},
+					{
+						"conditions": [
+							{
+								"name": "emeta",
+								"type": "variable_if",
+								"value": 1
+							}
+						],
+						"from": {
+							"key_code": "f"
+						},
+						"to": [
+							{
+								"set_variable": {
+									"name": "emeta trace",
+									"value": 0
+								}
+			    			},
+							{
+								"key_code": "return_or_enter"
+							}
+						],
+						"type": "basic"
+					}
+				]
+			},
           {
-            "description": "_emeta_trig",
+            "description": "_emeta_trace",
             "manipulators": [
               {
                 "conditions": [
                   {
-                    "input_sources": [
-                      {
-                        "input_source_id": "com.apple.keylayout.RussianWin",
-                        "language": "ru"
-                      }
-                    ],
-                    "type": "input_source_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "f"
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "emeta",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "emeta",
-                      "value": 0
-                    }
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "period"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "f",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "emeta",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "emeta",
-                      "value": 0
-                    }
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "q"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "_emeta",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7496,14 +8699,20 @@
                     "modifiers": [
                       "command"
                     ]
-                  }
+                  },
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+			    	}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7517,14 +8726,20 @@
                     "modifiers": [
                       "command"
                     ]
-                  }
+                  },
+				  {
+					  "set_variable": {
+						  "name": "emeta trace",
+						  "value": 0
+					  }
+			      }
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7539,13 +8754,20 @@
                       "shift"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+			    	}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7560,13 +8782,20 @@
                       "shift"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+			    	}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7587,13 +8816,20 @@
                       "control"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+			    	}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7614,13 +8850,20 @@
                       "control"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+			    	}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7646,7 +8889,7 @@
                   },
                   {
                     "set_variable": {
-                      "name": "emeta",
+                      "name": "emeta trace",
                       "value": 0
                     }
                   }
@@ -7656,7 +8899,7 @@
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7665,6 +8908,12 @@
                   "key_code": "comma"
                 },
                 "to": [
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					},
                   {
                     "key_code": "w",
                     "modifiers": [
@@ -7677,7 +8926,7 @@
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7686,6 +8935,12 @@
                   "key_code": "period"
                 },
                 "to": [
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					},
                   {
                     "key_code": "y",
                     "modifiers": [
@@ -7699,7 +8954,7 @@
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7713,14 +8968,20 @@
                     "modifiers": [
                       "option"
                     ]
-                  }
+                  },
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7735,13 +8996,21 @@
                       "shift"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
+						
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7756,13 +9025,20 @@
                       "control"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7777,13 +9053,20 @@
                       "option"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7807,13 +9090,20 @@
                   {
                     "key_code": "tab"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7828,13 +9118,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7855,13 +9152,20 @@
                       "control"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7876,13 +9180,20 @@
                       "option"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7897,13 +9208,20 @@
                       "option"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7921,13 +9239,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7945,13 +9270,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7966,13 +9298,20 @@
                       "control"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -7987,13 +9326,20 @@
                   {
                     "key_code": "a"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8008,13 +9354,20 @@
                   {
                     "key_code": "page_up"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8026,13 +9379,20 @@
                   {
                     "key_code": "page_down"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8047,13 +9407,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8077,13 +9444,20 @@
                   {
                     "key_code": "delete_or_backspace"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8098,13 +9472,20 @@
                   {
                     "key_code": "left_arrow"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8119,13 +9500,20 @@
                   {
                     "key_code": "right_arrow"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8140,13 +9528,20 @@
                       "option"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8161,13 +9556,20 @@
                       "option"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8182,13 +9584,20 @@
                   {
                     "key_code": "down_arrow"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8203,13 +9612,20 @@
                   {
                     "key_code": "up_arrow"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8226,13 +9642,20 @@
                   {
                     "key_code": "delete_or_backspace"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8247,13 +9670,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8268,13 +9698,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8289,13 +9726,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8310,13 +9754,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8331,13 +9782,20 @@
                       "option"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8352,13 +9810,20 @@
                       "command"
                     ]
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               },
               {
                 "conditions": [
                   {
-                    "name": "emeta",
+                    "name": "emeta trace",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -8370,6 +9835,13 @@
                   {
                     "key_code": "return_or_enter"
                   }
+					,
+					{
+						"set_variable": {
+							"name": "emeta trace",
+							"value": 0
+						}
+					}
                 ],
                 "type": "basic"
               }
@@ -8592,6 +10064,32 @@
                   },
                   {
                     "key_code": "left_arrow"
+                  }
+                ],
+                "type": "basic"
+              },
+			  {
+                "conditions": [
+                  {
+                    "name": "bmeta",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                  "to": [
+                  {
+                    "key_code": "return_or_enter",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ],
                 "type": "basic"
