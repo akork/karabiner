@@ -18,6 +18,336 @@
                 },
                 "rules": [
                     {
+                        "description": "_selection_layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+									{
+										"set_variable": {
+											"name": "selection",
+											"value": 0
+										}
+									},
+                                    {
+                                        "key_code": "g",
+										"modifiers": [
+											"control"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+									{
+										"set_variable": {
+											"name": "selection",
+											"value": 0
+										}
+									},
+                                    {
+                                        "key_code": "delete_or_backspace"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+										"modifiers": [
+											"option",
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+										"modifiers": [
+											"option",
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+										"modifiers": [
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+										"modifiers": [
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+										"modifiers": [
+											"command",
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+										"modifiers": [
+											"command",
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+										"modifiers": [
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+										"modifiers": [
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_down",
+										"modifiers": [
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "selection",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_up",
+										"modifiers": [
+											"shift"
+										]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "_bmeta_os",
                         "manipulators": [
                             {
@@ -29,6 +359,135 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+									{
+										"set_variable": {
+											"name": "bmeta trace",
+											"value": 0
+										}
+									},
+                                    {
+                                        "key_code": "comma"
+                                    },
+									{
+										"key_code": "spacebar"
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "bmeta trace",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+									{
+										"set_variable": {
+											"name": "bmeta trace",
+											"value": 0
+										}
+									},
+                                    {
+                                        "key_code": "comma"
+                                    },
+									{
+										"key_code": "spacebar"
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "bmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+									{
+										"set_variable": {
+											"name": "bmeta trace",
+											"value": 0
+										}
+									},
+                                    {
+                                        "key_code": "comma"
+                                    },
+									{
+										"key_code": "return_or_enter"
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "bmeta trace",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+									{
+										"set_variable": {
+											"name": "bmeta trace",
+											"value": 0
+										}
+									},
+                                    {
+                                        "key_code": "comma"
+                                    },
+									{
+										"key_code": "return_or_enter"
+									}
+                                ],
+                                "type": "basic"
+                            },
+
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "bmeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "5",
                                     "modifiers": {
                                         "optional": [
@@ -783,7 +1242,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "2",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -815,7 +1274,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "2",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -938,6 +1397,13 @@
                         "description": "_bmeta_os_trig",
                         "manipulators": [
                             {
+								"conditions": [
+									{
+										"type": "variable_unless",
+										"name": "meta",
+										"value": 1
+									}	
+								],
                                 "from": {
                                     "key_code": "0",
                                     "modifiers": {
@@ -1018,7 +1484,13 @@
                                         "modifiers": [
                                             "control"
                                         ]
-                                    }
+                                    },
+									{
+										"set_variable": {
+											"name": "selection",
+											"value": 0
+										}
+									}
                                 ],
                                 "type": "basic"
                             }
@@ -8555,25 +9027,95 @@
                                         }
                                     },
                                     {
-                                        "key_code": "open_bracket",
+                                        "key_code": "down_arrow",
                                         "modifiers": [
-                                            "shift"
+                                            "control",
+											"command"
                                         ]
-                                    },
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
                                     {
-                                        "key_code": "close_bracket",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "left_arrow"
-                                    },
+                                        "name": "emeta trace",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "9"
+                                },
+                                "to": [
                                     {
                                         "set_variable": {
-                                            "name": "emeta",
+                                            "name": "emeta trace",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "control",
+											"command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "0"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "emeta trace",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "control",
+											"command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta trace",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "0"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "emeta trace",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "control",
+											"command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -8602,6 +9144,7 @@
                                             "option"
                                         ]
                                     }
+
                                 ],
                                 "type": "basic"
                             },
@@ -8793,7 +9336,34 @@
                                         }
                                     },
                                     {
-                                        "key_code": "spacebar",
+                                        "key_code": "z",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta trace",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "emeta trace",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "key_code": "z",
                                         "modifiers": [
                                             "command"
                                         ]
@@ -8897,6 +9467,67 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "optional": "any"
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "emeta trace",
+                                            "value": 0
+                                        }
+                                    },
+									{
+										"set_variable": {
+											"name": "selection",
+											"value": 1
+										}
+									}
+
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta trace",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "optional": "any"
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "emeta trace",
+                                            "value": 0
+                                        }
+                                    },
+									{
+										"set_variable": {
+											"name": "selection",
+											"value": 1
+										}
+									}
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "emeta",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "e",
                                     "modifiers": {
                                         "optional": "any"
@@ -8909,12 +9540,19 @@
                                             "value": 0
                                         }
                                     },
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    }
+									{
+										"set_variable": {
+											"name": "selection",
+											"value": 1
+										}
+									},
+									{
+										"key_code": "left_arrow",
+										"modifiers": [
+											"option",
+											"shift"
+										]
+									}
                                 ],
                                 "type": "basic"
                             },
@@ -11076,10 +11714,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "semicolon",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
+                                        "key_code": "semicolon"
                                     }
                                 ],
                                 "type": "basic"
@@ -11243,7 +11878,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "semicolon"
+                                        "key_code": "semicolon",
+										"modifiers": [
+											"shift"
+										]
                                     }
                                 ],
                                 "type": "basic"
@@ -11314,8 +11952,20 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "hyphen"
-                                    }
+                                        "key_code": "quote",
+										"modifiers": [
+											"shift"
+										]
+                                    },
+									{
+										"key_code": "quote",
+										"modifiers": [
+											"shift"
+										]
+									},
+									{
+										"key_code": "left_arrow"
+									}
                                 ],
                                 "type": "basic"
                             },
@@ -12691,82 +13341,6 @@
                         ]
                     },
                     {
-                        "description": "_brackets",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hmeta",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "9",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "9",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "9",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hmeta",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "0",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "_ru",
                         "manipulators": [
                             {
@@ -13818,6 +14392,22 @@
                     {
                         "description": "_dvorak",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "delete_or_backspace",
